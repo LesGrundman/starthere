@@ -1,0 +1,284 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10474,        276]
+NotebookOptionsPosition[      8627,        225]
+NotebookOutlinePosition[      9359,        252]
+CellTagsIndexPosition[      9289,        247]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Homework for Class:Year:Semester:HW1",
+ FontColor->GrayLevel[0]]], "Section",
+ CellFrame->{{0.5, 3}, {3, 0.5}},
+ CellFrameColor->GrayLevel[0],
+ CellChangeTimes->{{3.7081890407827663`*^9, 3.70818907364771*^9}, {
+  3.708189186547406*^9, 3.708189201888031*^9}, {3.7081896124103765`*^9, 
+  3.7081896327772975`*^9}, {3.7081897608878965`*^9, 3.708189765353156*^9}, {
+  3.7081902621032887`*^9, 
+  3.708190275017397*^9}},ExpressionUUID->"25101b4c-3bf0-4ac4-97df-\
+9b808c031bf5"],
+
+Cell["Given the following parameters:", "Text",
+ CellChangeTimes->{{3.7078526563743153`*^9, 
+  3.707852660645628*^9}},ExpressionUUID->"d24f07ac-a5f8-4502-847b-\
+b94e3cde360a"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{
+       RowBox[{
+         RowBox[{"bin", "=", 
+           RowBox[{"Databin", "[", "\"mUBJUclD\"", "]"}]}], ";"}], " "}],
+     "General",BoxData},
+    "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+  "128ef292-290d-4773-bdcd-b4b68ccc65a7"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.707853059933728*^9, 3.707853074181747*^9}, {
+  3.708198419205315*^9, 
+  3.708198419205315*^9}},ExpressionUUID->"b9fb4605-8caf-4578-9d3c-\
+d020684a5197"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{
+       RowBox[{
+         RowBox[{"id", "=", "$WolframID"}], ";"}], " "}],"General",BoxData},
+    "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+  "fb8bb8bc-7873-4d57-85e7-69f539e7ddbb"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.707852914127883*^9, 
+  3.707852939877246*^9}},ExpressionUUID->"a4cefcd5-6eee-4fea-a395-\
+ae60c1ae722a"],
+
+Cell[BoxData[
+ RowBox[{"x", "=", Cell[BoxData[
+   FormBox[
+    TemplateBox[{RowBox[{"xHidden", "=", 
+        RowBox[{"N", "[", 
+          RowBox[{
+            RowBox[{"RandomReal", "[", "3", "]"}], ",", "3"}], "]"}], " "}],
+      "General",BoxData},
+     "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+   "6f02f11c-1649-4178-8304-b2e5595b3864"]}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]], None}, {
+   None, None}},
+ CellChangeTimes->{{3.707852574554813*^9, 3.70785257881398*^9}, {
+  3.7078528353083563`*^9, 3.707852837993849*^9}, {3.707855066920151*^9, 
+  3.707855068035907*^9}, {3.707855543480955*^9, 3.707855549089843*^9}, {
+  3.7081887926060376`*^9, 
+  3.7081887929092307`*^9}},ExpressionUUID->"df49cd31-e745-4b3e-a5d5-\
+e9537f3e75de"],
+
+Cell[BoxData[
+ RowBox[{"y", "=", Cell[BoxData[
+   FormBox[
+    TemplateBox[{RowBox[{"yHidden", "=", 
+        RowBox[{"RandomReal", "[", "10", "]"}], " "}],"General",BoxData},
+     "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+   "ae362c4b-a79d-45a0-a51c-10fcc8f60b08"]}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]], None}, {
+   None, None}},
+ CellChangeTimes->{{3.707852574554813*^9, 3.70785257881398*^9}, {
+  3.707852661772437*^9, 3.707852668173175*^9}, {3.707852842809182*^9, 
+  3.7078528441372423`*^9}, {3.7078550716734*^9, 3.707855072765165*^9}, {
+  3.708188795655077*^9, 
+  3.7081887958573265`*^9}},ExpressionUUID->"d2a74d24-3349-4d5f-bbd1-\
+be22cad19e14"],
+
+Cell["\<\
+If two adjacent sides of a rectangle are of length x and y, what is the area \
+of the rectangle? (please use the grey box below to calculate your answer)\
+\>", "Text",
+ CellChangeTimes->{{3.707852795921414*^9, 3.707852813037624*^9}, {
+  3.708188850398494*^9, 3.7081888692546883`*^9}, {3.7081889073282814`*^9, 
+  3.7081889129061995`*^9}, {3.70818990263904*^9, 
+  3.7081899836130557`*^9}},ExpressionUUID->"cc402c2d-95c7-46ce-9377-\
+9888076ec61c"],
+
+Cell[BoxData[
+ RowBox[{"\n", "\n", "\n", "\n", "\n"}]], "Code",
+ CellFrame->0.5,
+ CellFrameColor->GrayLevel[0],
+ CellChangeTimes->{{3.708188939372407*^9, 3.7081889427627172`*^9}, {
+  3.7081892624539523`*^9, 
+  3.708189274672949*^9}},ExpressionUUID->"7be19fba-c79e-4508-bf80-\
+94efbebbe1a6"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{
+       RowBox[{
+         RowBox[{"DatabinAdd", "[", 
+           RowBox[{"bin", ",", 
+             RowBox[{"<|", 
+               RowBox[{
+                 RowBox[{"\"id\"", "\[Rule]", "$WolframID"}], ",", 
+                 RowBox[{"\"parameters\"", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"x\"", "\[Rule]", "xHidden"}], ",", 
+                    RowBox[{"\"y\"", "\[Rule]", "yHidden"}]}], "}"}]}], ",", 
+                 RowBox[{"\"answer\"", "\[Rule]", 
+                   RowBox[{"xHidden", " ", "yHidden"}]}], ",", " ", 
+                 
+                 RowBox[{
+                  "\"homework\"", " ", "\[Rule]", " ", 
+                   "\"class2017FallHW1\""}]}], "|>"}]}], "]"}], ";"}], " "}],
+     "General",BoxData},
+    "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+  "9a6d5a46-54c5-474e-849c-fad3cd9481fb"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.707852823279626*^9, 3.707852858872805*^9}, {
+  3.707852942398131*^9, 3.70785299214314*^9}, {3.707853051685133*^9, 
+  3.7078530516851892`*^9}, {3.7081885608161507`*^9, 3.70818860297397*^9}, {
+  3.708190280859992*^9, 
+  3.7081902819815607`*^9}},ExpressionUUID->"40f6b4d7-5774-422a-a26f-\
+78faf82c55f5"],
+
+Cell["\<\
+Cut (ctrl-c) and paste (ctrl-v) your answer from above into the box below and \
+then hit submit: \
+\>", "Text",
+ CellChangeTimes->{{3.707852795921414*^9, 3.707852813037624*^9}, {
+  3.708188850398494*^9, 3.7081888692546883`*^9}, {3.7081889073282814`*^9, 
+  3.7081889129061995`*^9}, {3.7081894350527105`*^9, 
+  3.708189476197806*^9}},ExpressionUUID->"07869a6e-bfc1-499f-8da7-\
+39c76f1fb5bb"],
+
+Cell["", "Text",
+ CellFrame->{{0.5, 3}, {3, 0.5}},
+ CellChangeTimes->{
+  3.70786024302642*^9, {3.707863176642037*^9, 3.7078631857769747`*^9}},
+ CellTags->"answer 1",ExpressionUUID->"4c4e8d07-9f7f-4db5-ac34-b549be27ceb8"],
+
+Cell[BoxData[Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{
+       RowBox[{"Button", "[", 
+         RowBox[{"\"Submit Answer\"", ",", " ", 
+           RowBox[{"DatabinAdd", "[", 
+             RowBox[{
+               RowBox[{"Databin", "[", "\"mUBORA6E\"", "]"}], ",", 
+               RowBox[{"<|", 
+                 RowBox[{
+                   RowBox[{"\"id\"", " ", "\[Rule]", "$WolframID"}], ",", " ", 
+                   
+                   RowBox[{
+                    "\"homework\"", " ", "\[Rule]", " ", 
+                    "\"class2017FallHW1\""}], ",", 
+                   RowBox[{"\"student answer\"", " ", "\[Rule]", " ", 
+                    RowBox[{
+                    RowBox[{"Cases", "[", 
+                    RowBox[{
+                    RowBox[{"NotebookGet", "@", 
+                    RowBox[{"EvaluationNotebook", "[", "]"}]}], ",", 
+                    RowBox[{"Cell", "[", 
+                    RowBox[{"_", ",", "___", ",", 
+                    RowBox[{"CellTags", "\[Rule]", "\"answer 1\""}], ",", 
+                    "___"}], "]"}], ",", "Infinity"}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]}], "|>"}]}], 
+             "]"}]}], "]"}], " "}],"General",BoxData},
+    "NotebookTemplateExpression"], TextForm]],ExpressionUUID->
+  "75e3ae67-7574-4754-aece-c29ab6813eb1"]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"Unevaluated"}, "NotebookTemplateCellBehavior"]]], None}, {
+   None, None}},
+ CellChangeTimes->{{3.7081895219134617`*^9, 3.708189523282194*^9}, {
+  3.7081984894307585`*^9, 3.7081984894307585`*^9}, {3.7081986070505486`*^9, 
+  3.708198609305601*^9}},ExpressionUUID->"71e85fa2-9de8-474a-806e-\
+7a246c5f8e97"]
+}, Open  ]]
+},
+WindowSize->{766, 772},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+ShowCellTags->True,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "answer 1"->{
+  Cell[6647, 178, 220, 4, 
+  64, "Text", "ExpressionUUID" -> "4c4e8d07-9f7f-4db5-ac34-b549be27ceb8",
+   CellTags->"answer 1"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"answer 1", 9138, 240}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 494, 9, 77, "Section", "ExpressionUUID" -> \
+"25101b4c-3bf0-4ac4-97df-9b808c031bf5"],
+Cell[1077, 33, 175, 3, 30, "Text", "ExpressionUUID" -> \
+"d24f07ac-a5f8-4502-847b-b94e3cde360a"],
+Cell[1255, 38, 648, 17, 40, "Input", "ExpressionUUID" -> \
+"b9fb4605-8caf-4578-9d3c-d020684a5197"],
+Cell[1906, 57, 547, 14, 40, "Input", "ExpressionUUID" -> \
+"a4cefcd5-6eee-4fea-a395-ae60c1ae722a"],
+Cell[2456, 73, 834, 20, 40, "Input", "ExpressionUUID" -> \
+"df49cd31-e745-4b3e-a5d5-e9537f3e75de"],
+Cell[3293, 95, 755, 17, 40, "Input", "ExpressionUUID" -> \
+"d2a74d24-3349-4d5f-bbd1-be22cad19e14"],
+Cell[4051, 114, 454, 8, 49, "Text", "ExpressionUUID" -> \
+"cc402c2d-95c7-46ce-9377-9888076ec61c"],
+Cell[4508, 124, 290, 7, 143, "Code", "ExpressionUUID" -> \
+"7be19fba-c79e-4508-bf80-94efbebbe1a6"],
+Cell[4801, 133, 1441, 33, 64, "Input", "ExpressionUUID" -> \
+"40f6b4d7-5774-422a-a26f-78faf82c55f5"],
+Cell[6245, 168, 399, 8, 30, "Text", "ExpressionUUID" -> \
+"07869a6e-bfc1-499f-8da7-39c76f1fb5bb"],
+Cell[6647, 178, 220, 4, 64, "Text", "ExpressionUUID" -> \
+"4c4e8d07-9f7f-4db5-ac34-b549be27ceb8",
+ CellTags->"answer 1"],
+Cell[6870, 184, 1741, 38, 124, "Input", "ExpressionUUID" -> \
+"71e85fa2-9de8-474a-806e-7a246c5f8e97"]
+}, Open  ]]
+}
+]
+*)
+

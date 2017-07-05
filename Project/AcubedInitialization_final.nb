@@ -1,0 +1,468 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17742,        460]
+NotebookOptionsPosition[     14590,        381]
+NotebookOutlinePosition[     14963,        397]
+CellTagsIndexPosition[     14920,        394]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["ACubed Initialization notebook", "Section",
+ CellChangeTimes->{{3.708072872489702*^9, 3.708072897305066*^9}, {
+  3.7081977178157015`*^9, 
+  3.7081977401714287`*^9}},ExpressionUUID->"db2b3a79-68de-4353-bf7f-\
+f460081a2e68"],
+
+Cell["\<\
+This notebook initializes the Acubed system; the Acubed system  has been \
+created to facilitate algorithmic homework creation, automated grading, and \
+aggregation of results. At this time this notebook and related templates are \
+only at a proof-of-principle stage.\
+\>", "Text",
+ CellChangeTimes->{{3.708072925771804*^9, 3.708073016307716*^9}, {
+  3.7080731499455905`*^9, 3.7080731553856688`*^9}, {3.708076170936651*^9, 
+  3.708076173741953*^9}, {3.708191103589051*^9, 
+  3.708191196830201*^9}},ExpressionUUID->"79402454-5185-484e-a719-\
+d1cb717964bf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Create Student ID/Name Cloud Object ", "Section",
+ CellChangeTimes->{{3.7080730845617924`*^9, 3.7080730946622496`*^9}, {
+  3.7080739661545143`*^9, 3.708073985142079*^9}, {3.7080747001134715`*^9, 
+  3.7080747057828465`*^9}},ExpressionUUID->"7767fab8-13d0-4737-bc7a-\
+943c4a47c124"],
+
+Cell["\<\
+The following code creates a databin with student names and WolframID. Since \
+following pieces of code rely at some points on the $WolframID command, the \
+databin must be initialized with the student\[CloseCurlyQuote]s correct \
+WolframID for the system to work.\
+\>", "Text",
+ CellChangeTimes->{{3.708072925771804*^9, 3.708073016307716*^9}, {
+  3.7080731499455905`*^9, 3.7080731553856688`*^9}, {3.708076170936651*^9, 
+  3.708076173741953*^9}, {3.708191103589051*^9, 3.708191196830201*^9}, {
+  3.7081912388013687`*^9, 
+  3.708191328241543*^9}},ExpressionUUID->"c6133b9f-8d11-46cd-9e8f-\
+71ce83b8176c"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    StyleBox["studentIDS", "Code"], 
+    StyleBox["  ", "Code"], 
+    StyleBox["=", "Code"], 
+    StyleBox[" ", "Code"], 
+    RowBox[{"CloudObject", "[", "]"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7080732128540115`*^9, 3.708073240134693*^9}, {
+  3.7081794918240423`*^9, 
+  3.7081794969934974`*^9}},ExpressionUUID->"cbacaade-7f96-49c8-8656-\
+9d2ef513143b"],
+
+Cell[BoxData[
+ RowBox[{"studentIDS", " ", "=", " ", 
+  RowBox[{"CloudObject", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.708260004984003*^9, 
+  3.7082600159599705`*^9}},ExpressionUUID->"19ab289b-be40-4ff3-96e1-\
+d6c167bb7d2e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CloudPut", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"<|", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+        "\"\<WolframID\>\"", " ", "\[Rule]", " ", 
+         "\"\<user1@wolfram.com\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<firstName\>\"", " ", "\[Rule]", " ", "\"\<student1first\>\""}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<lastName\>\"", " ", "\[Rule]", " ", "\"\<student1last\>\""}]}], 
+       "|>"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"<|", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+        "\"\<WolframID\>\"", "\[Rule]", " ", "\"\<user2@wolram.com\>\""}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<firstName\>\"", " ", "\[Rule]", " ", "\"\<student2first\>\""}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "\"\<lastName\>\"", " ", "\[Rule]", " ", "\"\<student2last\>\""}]}], 
+       "|>"}]}], "}"}], ",", "\[IndentingNewLine]", " ", "studentIDS"}], 
+   "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.708073251983344*^9, 3.708073426366502*^9}, {
+   3.708073459912784*^9, 3.708073592749666*^9}, 3.7080736916279707`*^9, {
+   3.708075199518035*^9, 3.708075247951972*^9}, {3.7080752809174633`*^9, 
+   3.7080752844914*^9}, {3.7080753825031023`*^9, 3.7080753886087656`*^9}, {
+   3.7082599300118484`*^9, 
+   3.7082599527628813`*^9}},ExpressionUUID->"5fec8aa2-f9d9-4333-b089-\
+cdd784c17385"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"check", " ", "data", " ", "entry"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"Dataset", "[", 
+   RowBox[{"CloudGet", "[", "studentIDS", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.708073696482483*^9, 
+  3.7080737344466076`*^9}},ExpressionUUID->"560216bd-6f50-4c23-9476-\
+2e35900fbf49"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "rows", " ", "can", " ", "be", " ", "queried", " ", "from", " ", "the", 
+    " ", "cloud", " ", "object", " ", "with", " ", "select", " ", "and", " ", 
+    RowBox[{"part", ":"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"CloudGet", "[", "studentIDS", "]"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", "\"\<lastName\>\"", "]"}], " ", "===", " ", 
+       "\"\<student1last\>\""}], "&"}]}], "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.708073801967247*^9, 3.7080739141831875`*^9}, {
+  3.7080744654246607`*^9, 3.7080744791351857`*^9}, {3.7080745107508707`*^9, 
+  3.708074582456644*^9}, {3.708074636349846*^9, 3.708074637266464*^9}, {
+  3.7080747612142773`*^9, 
+  3.708074811131423*^9}},ExpressionUUID->"9329bc3d-fcf4-46ae-97e5-\
+0381f28375d1"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"get", " ", "all", " ", "$WolframIDs"}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.708076201422454*^9, 
+  3.708076215909297*^9}},ExpressionUUID->"e81a2c75-d13b-4b4d-a4cc-\
+0a6d000c610f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CloudGet", "[", "studentIDS", "]"}], "[", 
+  RowBox[{"[", 
+   RowBox[{"All", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.708074817795625*^9, 
+  3.708074885560622*^9}},ExpressionUUID->"95f84420-9efa-4261-bbd9-\
+1a701d24c14e"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"define", " ", "class"}], "-", "year", "-", 
+   RowBox[{
+   "semester", " ", "identifier", " ", "to", " ", "create", " ", "group", " ",
+     "for", " ", "permissions"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.7080749841411448`*^9, 
+  3.708075021047665*^9}},ExpressionUUID->"739f7dad-486b-46d4-8fdc-\
+5e990a32069f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"classYearSemester", " ", "=", " ", "\"\<EM37002017Fall\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.708075064456271*^9, 3.708075091086546*^9}, {
+  3.7080759695410414`*^9, 3.7080759771710644`*^9}, {3.708076065538975*^9, 
+  3.708076066709301*^9}},ExpressionUUID->"2a498ee1-9565-4ff9-b6c4-\
+7b0c1847cacb"],
+
+Cell[BoxData[
+ RowBox[{"EM37002017FallPG", " ", "=", " ", 
+  RowBox[{"CreatePermissionsGroup", "[", 
+   RowBox[{"classYearSemester", ",", 
+    RowBox[{
+     RowBox[{"CloudGet", "[", "studentIDS", "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7080749085716877`*^9, 3.7080749231937337`*^9}, {
+   3.7080750948774867`*^9, 3.7080751155748863`*^9}, 3.7080753616326084`*^9, {
+   3.708075930350571*^9, 3.708075948152235*^9}, {3.708075983567877*^9, 
+   3.708075983667718*^9}, {3.7080760808615074`*^9, 
+   3.7080760822649508`*^9}},ExpressionUUID->"63d310e2-c640-4624-951a-\
+ea61578bbae5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Create Databin for random problem parameters and correct answers from \
+instructor\
+\>", "Section",
+ CellChangeTimes->{{3.7080746902584195`*^9, 3.708074730910515*^9}, {
+  3.708075491210068*^9, 3.708075504932336*^9}, {3.7081904843939676`*^9, 
+  3.7081905194375153`*^9}, {3.7081907304448724`*^9, 
+  3.7081907384241047`*^9}},ExpressionUUID->"10481b8c-e7b5-4d0a-b721-\
+9b013122bc4f"],
+
+Cell["\<\
+The following code creates a databin with randomized input for the problem \
+plus the instructor\[CloseCurlyQuote]s solution. Permissions must be set on \
+this databin so that students and write to it, but they cannot read from it.\
+\>", "Text",
+ CellChangeTimes->{{3.708072925771804*^9, 3.708073016307716*^9}, {
+  3.7080731499455905`*^9, 3.7080731553856688`*^9}, {3.708076170936651*^9, 
+  3.708076173741953*^9}, {3.708191103589051*^9, 3.708191196830201*^9}, {
+  3.7081912388013687`*^9, 3.708191328241543*^9}, {3.7081913612005496`*^9, 
+  3.708191435474365*^9}},ExpressionUUID->"54da4ba0-c19b-4798-b610-\
+ec5f4a93b12b"],
+
+Cell[BoxData[
+ RowBox[{"a3HWCorrectBin", " ", "=", " ", 
+  RowBox[{"CreateDatabin", "[", 
+   RowBox[{"\"\<Name\>\"", " ", "\[Rule]", " ", "\"\<a3HWCorrectBin\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7080762770781565`*^9, 3.708076353488089*^9}, {
+   3.708076384353335*^9, 3.708076386190179*^9}, {3.7080764454828496`*^9, 
+   3.7080764518150916`*^9}, {3.7080766647841415`*^9, 
+   3.7080767021760387`*^9}, {3.708077210493272*^9, 3.708077220624564*^9}, 
+   3.7080773434044456`*^9, {3.708077760715358*^9, 
+   3.708077796660797*^9}},ExpressionUUID->"53931ae9-413e-4b55-b3f8-\
+54f51a9976b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Create Databin for student solutions", "Section",
+ CellChangeTimes->{{3.7080746902584195`*^9, 3.708074730910515*^9}, {
+  3.708075491210068*^9, 3.708075504932336*^9}, {3.7081904843939676`*^9, 
+  3.708190540789711*^9}},ExpressionUUID->"c90e81a1-b861-45cb-ba28-\
+b0a1acaf2182"],
+
+Cell["\<\
+The databin created below will hold the student\[CloseCurlyQuote]s submitted \
+homework answers and efforts to calculate the answer. \
+\>", "Text",
+ CellChangeTimes->{{3.7081906192368927`*^9, 3.7081906247470417`*^9}, {
+  3.7081908014759827`*^9, 3.7081910383272743`*^9}, {3.708191520761577*^9, 
+  3.7081916226544375`*^9}},ExpressionUUID->"18edd4da-c80a-4474-85da-\
+da9ae5d49ff3"],
+
+Cell[BoxData[
+ RowBox[{"a3HWStudentBin", " ", "=", " ", 
+  RowBox[{"CreateDatabin", "[", 
+   RowBox[{"\"\<Name\>\"", " ", "\[Rule]", " ", "\"\<a3HWStudentBin\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.708190573193737*^9, 
+  3.708190585793497*^9}},ExpressionUUID->"70f31360-285b-41e4-8e9d-\
+132cb60072c3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Form to create HW notebook", "Section",
+ CellChangeTimes->{{3.7080746902584195`*^9, 3.708074730910515*^9}, {
+   3.708075491210068*^9, 3.708075504932336*^9}, {3.7081904843939676`*^9, 
+   3.708190540789711*^9}, {3.7081906304519234`*^9, 3.7081907105171657`*^9}, {
+   3.708190763968648*^9, 3.7081907835199184`*^9}, 
+   3.708259684218601*^9},ExpressionUUID->"68cf16f3-5394-421d-b662-\
+f02a514b1920"],
+
+Cell["\<\
+The form created below creates a notebook with randomized parameters for \
+problem input. The randomized parameters and instructor solution are stored \
+in the \[OpenCurlyDoubleQuote]a3HWCorrectBin\[CloseCurlyDoubleQuote]. The \
+student cannot see the instructor\[CloseCurlyQuote]s solution as the cell is \
+deleted at the time the notebook is created. The correct solution, though, \
+has been stored along with problem parameters in \
+\[OpenCurlyDoubleQuote]a3HWCorrectBin\[CloseCurlyDoubleQuote]. Permissions \
+for this databin must be set so that the student and write to the databin, \
+but cannot read from it.\
+\>", "Text",
+ CellChangeTimes->{{3.7081906192368927`*^9, 3.7081906247470417`*^9}, {
+  3.7081908014759827`*^9, 
+  3.7081910383272743`*^9}},ExpressionUUID->"bdde575d-0ce7-438c-b85a-\
+0a571cbe9e05"],
+
+Cell[BoxData[
+ RowBox[{"hw1TemplateFile", " ", "=", " ", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+     "\"\<AcubedTemplateHW1v3.nb\>\""}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7081989225311737`*^9, 3.708198950020589*^9}, {
+   3.708199028142411*^9, 3.708199044941285*^9}, {3.708206087785722*^9, 
+   3.708206088619281*^9}, 3.708209843442295*^9, {3.708210162202454*^9, 
+   3.7082101625191584`*^9}, 
+   3.7082115653379927`*^9},ExpressionUUID->"811fe2af-415b-4424-9fcf-\
+e3d39f92e6b7"],
+
+Cell[BoxData[
+ RowBox[{"saveTemplate", "=", 
+  RowBox[{"CopyFile", "[", 
+   RowBox[{"hw1TemplateFile", ",", 
+    RowBox[{
+    "CloudObject", "[", "\"\<lagrundman/hw1TemplateFileCloud.nb\>\"", "]"}]}],
+    "]"}]}]], "Input",
+ CellChangeTimes->{{3.7081990581978335`*^9, 3.7081990912205877`*^9}, {
+  3.7082021359181085`*^9, 3.708202145735944*^9}, {3.7082027505156264`*^9, 
+  3.7082027511481924`*^9}},ExpressionUUID->"6d7ba9a4-554f-48f5-9213-\
+a96866980c06"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetPermissions", "[", 
+  RowBox[{"saveTemplate", ",", "\"\<Public\>\""}], "]"}]], "Input",ExpressionU\
+UID->"444b7455-2172-4727-a88f-a572063b0ebd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"All", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"\<\"Owner\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Read\"\>", ",", "\<\"Write\"\>", ",", "\<\"Execute\"\>"}], 
+     "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.708211966149776*^9},ExpressionUUID->"8cbae563-6387-449d-8f2e-\
+99fa8cc8d16a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "@", 
+  RowBox[{"FormFunction", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<name\>\"", "\[Rule]", "\"\<String\>\""}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+         "templatePath", "=", 
+          "\"\<instructorname/hw1TemplateFileCloud.nb\>\""}], ",", 
+         RowBox[{
+         "outputPath", "=", 
+          "\"\<instructorname/hw1TemplateFileCloudGenerated.nb\>\""}]}], 
+        "}"}], ",", 
+       RowBox[{
+        RowBox[{"GenerateDocument", "[", 
+         RowBox[{"templatePath", ",", 
+          RowBox[{"<|", 
+           RowBox[{"\"\<author\>\"", "\[Rule]", "#name"}], "|>"}], ",", 
+          "outputPath"}], "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"HTTPRedirect", "[", 
+         RowBox[{"CloudObject", "[", "outputPath", "]"}], "]"}]}]}], "]"}], 
+     "&"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.708201978315488*^9, {3.708202022392101*^9, 3.7082020299878693`*^9}, 
+   3.7082021111270733`*^9, {3.7082021597318416`*^9, 3.7082021618645372`*^9}, {
+   3.7082024041367764`*^9, 3.708202408327303*^9}, 3.7082036911129055`*^9, {
+   3.7082601300558743`*^9, 
+   3.708260146606864*^9}},ExpressionUUID->"96f2967e-fe98-4ff7-95aa-\
+23f190413f57"]
+}, Open  ]]
+},
+WindowSize->{1406, 772},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+Magnification:>1.2 Inherited,
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 228, 4, 85, "Section", "ExpressionUUID" -> \
+"3bcf3f52-b259-4c07-9c19-db9c6ac2c72b"],
+Cell[811, 28, 565, 10, 58, "Text", "ExpressionUUID" -> \
+"639d9191-aef9-48b5-bd34-c8931674ebde"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1413, 43, 286, 4, 85, "Section", "ExpressionUUID" -> \
+"7e9fd8a9-0301-4519-a873-ee4192d2edf5"],
+Cell[1702, 49, 613, 11, 58, "Text", "ExpressionUUID" -> \
+"2d6c57ba-137c-4731-8777-efca6d4ccf80"],
+Cell[2318, 62, 449, 12, 62, "Input", "ExpressionUUID" -> \
+"f86c2465-ad3a-4d78-a6a0-edadea9871eb"],
+Cell[2770, 76, 229, 5, 37, "Input", "ExpressionUUID" -> \
+"19ab289b-be40-4ff3-96e1-d6c167bb7d2e"],
+Cell[3002, 83, 1504, 35, 254, "Input", "ExpressionUUID" -> \
+"5fec8aa2-f9d9-4333-b089-cdd784c17385"],
+Cell[4509, 120, 357, 9, 62, "Input", "ExpressionUUID" -> \
+"630c262e-8678-4e94-b250-ae5e1b45a20c"],
+Cell[4869, 131, 972, 23, 86, "Input", "ExpressionUUID" -> \
+"4b74ab3e-84be-427f-9236-1b989854e23d"],
+Cell[5844, 156, 234, 5, 37, "Input", "ExpressionUUID" -> \
+"c915189a-352d-4346-9aa3-4196531607c0"],
+Cell[6081, 163, 273, 7, 37, "Input", "ExpressionUUID" -> \
+"45ea0021-a564-47a3-ac46-e447f1a827d2"],
+Cell[6357, 172, 379, 9, 37, "Input", "ExpressionUUID" -> \
+"d13c9f58-c79c-4aa5-b390-7c8607cc6baf"],
+Cell[6739, 183, 342, 7, 37, "Input", "ExpressionUUID" -> \
+"c7c0a961-3a4b-4765-ba31-a6b9a9328882"],
+Cell[7084, 192, 654, 13, 37, "Input", "ExpressionUUID" -> \
+"2c94361f-89da-4ce9-aced-b223562a0162"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7775, 210, 389, 8, 85, "Section", "ExpressionUUID" -> \
+"bc711c1b-81b9-487e-beec-edb161ff42f7"],
+Cell[8167, 220, 628, 10, 58, "Text", "ExpressionUUID" -> \
+"df0ed847-efbc-4de3-b4c4-acf8749de832"],
+Cell[8798, 232, 595, 11, 37, "Input", "ExpressionUUID" -> \
+"086e050c-c094-496c-9725-13f84ed9498a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9430, 248, 280, 4, 85, "Section", "ExpressionUUID" -> \
+"aca3c27a-d8b9-4043-b2d9-2ebd23298121"],
+Cell[9713, 254, 388, 7, 35, "Text", "ExpressionUUID" -> \
+"327ecf37-0508-4833-bb2e-77ad25968601"],
+Cell[10104, 263, 314, 7, 37, "Input", "ExpressionUUID" -> \
+"47f2f6c2-b461-407e-bdad-edb0ddf5ae22"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10455, 275, 400, 6, 85, "Section", "ExpressionUUID" -> \
+"c1e04405-0b1b-42f7-8d9c-138bc26884a7"],
+Cell[10858, 283, 821, 14, 81, "Text", "ExpressionUUID" -> \
+"2bd60a57-8a5a-493d-8ef3-bf70bd30ccfe"],
+Cell[11682, 299, 565, 12, 37, "Input", "ExpressionUUID" -> \
+"7e16fcab-0d6c-4aed-875e-35ba78b9104b"],
+Cell[12250, 313, 454, 10, 37, "Input", "ExpressionUUID" -> \
+"c50543b7-c81d-4931-9e75-140e09f76a76"],
+Cell[CellGroupData[{
+Cell[12729, 327, 171, 3, 37, "Input", "ExpressionUUID" -> \
+"f34de93b-b651-4e12-86f5-5dff2eb30b24"],
+Cell[12903, 332, 361, 10, 37, "Output", "ExpressionUUID" -> \
+"dad44ddc-f771-41dd-bebe-a68ed1ac818c"]
+}, Open  ]],
+Cell[13279, 345, 1295, 33, 110, "Input", "ExpressionUUID" -> \
+"96f2967e-fe98-4ff7-95aa-23f190413f57"]
+}, Open  ]]
+}
+]
+*)
+
